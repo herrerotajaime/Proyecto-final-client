@@ -6,7 +6,7 @@ import Message from "./components/Message";
 import AuthService from "./components/auth/AuthService";
 import { Route, Link } from "react-router-dom";
 import "bulma/css/bulma.css";
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import  MapContainer  from "./components/Map/map";
 
 
 class App extends Component {
@@ -61,13 +61,15 @@ class App extends Component {
         />
         <Route path="/login" render={() => <Login getUser={this.getUser} />} />
 
-        <Map google={this.props.google} zoom={14}>
+        <MapContainer/>
+
+        {/* <Map google={this.props.google} zoom={14}>
           <Marker onClick={this.onMarkerClick} name={"Current location"} />
 
           <InfoWindow onClose={this.onInfoWindowClose}>
             
           </InfoWindow>
-        </Map>
+        </Map> */}
 
       </div>
     );
@@ -75,6 +77,4 @@ class App extends Component {
 }
 
 
-export default GoogleApiWrapper({
-  apiKey: ("AIzaSyDRivfQDKbdyJeeXPj9ed6oP9QU-_wXJeg")
-})(App)
+export default App

@@ -1,3 +1,4 @@
+import React, { Component } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 
 export class MapContainer extends Component {
@@ -25,6 +26,11 @@ export class MapContainer extends Component {
       });
     }
   }
+
+  componentDidMount(){
+    this.showCurrentLocation()
+  }
+
   render() {
     const style = {
       width: "100%",
@@ -46,13 +52,17 @@ export class MapContainer extends Component {
             icon={{
               url:
                 "https://lh3.googleusercontent.com/-HC9CYmcjF3E/U3N2rnp-W3I/AAAAAAAABMw/qSJAzyyGp1o/w265-h353-n/14%2B-%2B2",
-              anchor: new this.props.google.maps.Point(32, 32),
+              anchor: new this.props.google.maps.Point(32,32),
               scaledSize: new this.props.google.maps.Size(52, 64)
             }}
+
           />
         </Map>
       </div>
     );
   }
 }
-export default showCurrentLocation;
+
+export default GoogleApiWrapper({
+  apiKey: ("AIzaSyDRivfQDKbdyJeeXPj9ed6oP9QU-_wXJeg")
+})(MapContainer)
