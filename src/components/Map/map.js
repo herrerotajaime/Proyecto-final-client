@@ -29,12 +29,28 @@ export class MapContainer extends Component {
 
   componentDidMount(){
     this.showCurrentLocation()
+
   }
+  addListener(){
+    let marker;
+
+    MapContainer.addListener('click', function(e) {
+      const clickPos = {
+        lat:e.latLng.lat(),
+        lng:e.latLng.lng()
+      }
+      console.log(clickPos);
+      marker.setPosition(clickPos);
+      // setPosOnForm(clickPos)
+    });}
+  
+
 
   render() {
     const style = {
-      width: "100%",
-      height: "90%"
+      width: "75%",
+      height: "75%",
+
     };
     return (
       <div>

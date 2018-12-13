@@ -59,8 +59,14 @@ export default class Signup extends Component {
             name="password"
             onChange={e => this.handleChange(e)}
           />
+          <label>Descripcion</label>
+          <input
+            type="textarea"
+            name="description"
+            onChange={e => this.handleChange(e)}
+            />
 
-          <label>Photo</label>
+          <label>Foto de usuario</label>
           <input
             type="file"
             name="photo"
