@@ -42,12 +42,11 @@ class Signup extends Component {
   }
   handleChange = (event) => {  
     const {name, value} = event.target;
-    if(name === ""){
+  
      this.setState({[name]: event.target.checked});
-    }
-    else{
+    
       this.setState({[name]: value});
-    }
+    
 
   }
   
