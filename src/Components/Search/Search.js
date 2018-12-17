@@ -8,8 +8,11 @@ class Search extends Component {
   constructor(props){
     super(props);
    
-    this.state = { username: '', password: '', email: '', address: '', zipCode: '', lat: '', lng: '', user:props.user};
+    this.state = { username: '', email: '', user:props.user};
     this.authService = new AuthService();
+  }
+  componentDidMount(){
+    
   }
 
   render () {
@@ -18,6 +21,8 @@ class Search extends Component {
       <div>
         <h1>Encuentra otras personas!</h1>
         <Link to={'/'}><button onClick={this.authService.logout}>Log Out</button></Link>
+        <p></p>
+        
       </div>
         
      )
