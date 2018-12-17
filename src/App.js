@@ -1,80 +1,43 @@
-import React, { Component } from "react";
-import "./App.css";
-import Signup from "./components/auth/Signup";
-import Login from "./components/auth/Login";
-import Message from "./components/Message";
-import AuthService from "./components/auth/AuthService";
-import { Route, Link } from "react-router-dom";
-import "bulma/css/bulma.css";
-import  MapContainer  from "./components/Map/map";
-
+import React, { Component } from 'react';
+import './App.css';
+import { Switch, Route } from "react-router-dom";
+import Home from "./Components/Home/Home"
+import Login from './Components/Login/Login';
+import Signup from './Components/Signup/Signup';
+import Profile from './Components/Profile/Profile';
+import AuthService from './auth/AuthService';
 
 class App extends Component {
-  constructor() {
-    super(); 
-
-    this.state = {
-      user: null
-    };
-
+  constructor(props){
+    super(props)
+    this.state = { loggedInUser: null };
     this.authService = new AuthService();
-
     this.fetchUser();
   }
-
   fetchUser = () => {
     this.authService
       .loggedin()
-      .then(user => this.setState({ ...this.state, user }));
+      .then(loggedInUser => this.setState({ ...this.state, loggedInUser }));
   };
 
-  getUser = user => {
-    this.setState({ ...this.state, user });
-  };
-
-  logout = () => {
-    this.authService
-      .logout()
-      .then(() => this.setState({ ...this.state, user: null }));
-  };
-
+  getTheUser= (userObj) => {
+    this.setState({
+      loggedInUser: userObj
+    })
+  }
   render() {
-    const welcome = this.state.user ? (
-      <div>
-        <p>Hola {this.state.user.username}</p>
-        <button onClick={this.logout}>Logout</button>
-      </div>
-    ) : (
-      <div>
-        <Link to="/">Home</Link> - <Link to="/signup">Signup</Link> -{" "}
-        <Link to="/login">Login</Link>
-      </div>
-    );
-
     return (
       <div className="App">
-        {welcome}
-        <Message user={this.state.user} />
-        <Route
-          path="/signup"
-          render={() => <Signup getUser={this.getUser} />}
-        />
-        <Route path="/login" render={() => <Login getUser={this.getUser} />} />
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route exact path='/login' render={() => <Login getUser={this.getTheUser}/>}/>
+          <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>
+          <Route exact path='/profile' render={() => <Profile user={this.state.loggedInUser} getUser={this.getTheUser}/>}/>
 
-        <MapContainer/>
-
-        {/* <Map google={this.props.google} zoom={14}>
-          <Marker onClick={this.onMarkerClick} name={"Current location"} />
-
-          <InfoWindow onClose={this.onInfoWindowClose}>
-            
-          </InfoWindow>
-        </Map> */}
-
+        </Switch>
       </div>
     );
   }
 }
 
-
-export default App
+export default App;
