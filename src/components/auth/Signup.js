@@ -41,7 +41,7 @@ export default class Signup extends Component {
     if (this.state && this.state.redirect) {
       return <Redirect to="/" />;
     }
-
+    
     return (
       <div>
         <h2>Signup</h2>
@@ -65,7 +65,12 @@ export default class Signup extends Component {
             name="description"
             onChange={e => this.handleChange(e)}
             />
-
+          <label>Address</label>
+          <input
+            type="text"
+            name="address"
+            onChange={e => this.handleChange(e)}
+            />
           <label>Foto de usuario</label>
           <input
             type="file"

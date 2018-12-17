@@ -11,7 +11,7 @@ import  MapContainer  from "./components/Map/map";
 
 class App extends Component {
   constructor() {
-    super();
+    super(); 
 
     this.state = {
       user: null
