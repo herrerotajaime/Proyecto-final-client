@@ -8,8 +8,8 @@ class GetUsers {
     });
     this.service = service;
   }
-  Getusers = () => {
-    return this.service.get('User')
+  Users = () => {
+    return this.service.get('user')
     .then(response => response.data)
   }
 }
