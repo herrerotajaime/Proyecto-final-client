@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { Component } from 'react'
 import AuthService from '../../auth/AuthService';
+import GetUsers from '../../auth/GetUsers';
 
 
  
@@ -9,11 +10,17 @@ class Search extends Component {
     super(props);
    
     this.state = { username: '', email: '', user:props.user};
+    this.GetUsers = new GetUsers();
     this.authService = new AuthService();
+
   }
   componentDidMount(){
     
   }
+
+  // takeUsers=()=>{
+  //   this.GetUsers.()
+  //   .then(data=>this.setState({...this.state, meetings: data}))} 
 
   render () {
       
