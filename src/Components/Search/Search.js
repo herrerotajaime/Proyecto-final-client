@@ -31,14 +31,15 @@ class Search extends Component {
           <Link to={"/"}>
             <button onClick={this.authService.logout}>Log Out</button>
           </Link>
+          {/* <Link to={"/profile"}><button onClick={}></button> </Link> */}
           {/* <p>{this.state.user}</p> */}
           {console.log(this.state.user)}
 
           {this.state.user.map(element => {
             return (
               <div>
-            <h2>{element.name}</h2>
-            <h3>{element.surname}</h3>
+            <h2>{element.name}{" " + element.surname}</h2>
+            <p>{element.description}</p>
             </div>
             )
           })}
