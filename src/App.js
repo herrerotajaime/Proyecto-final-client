@@ -7,6 +7,8 @@ import Signup from './Components/Signup/Signup';
 import Profile from './Components/Profile/Profile';
 import AuthService from './auth/AuthService';
 import Search from './Components/Search/Search';
+import 'bulma/css/bulma.css';
+import NavBar from './Components/Navbar/Navbar'
 
 class App extends Component {
   constructor(props){
@@ -29,6 +31,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+         <NavBar></NavBar>
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route exact path='/login' render={() => <Login getUser={this.getTheUser}/>}/>
@@ -37,6 +40,7 @@ class App extends Component {
           <Route exact path='/search' render={() => <Search user={this.state.loggedInUser} getUser={this.getTheUser}/>}/>
 
         </Switch>
+     
       </div>
     );
   }

@@ -54,10 +54,9 @@ class GoogleMapsContainer extends React.Component {
       // 'marginRight':
     }
    
-    console.log(this.state.meetings)
+    console.log(this.state)
       if(this.state.meetings){
         return (
-       
           <Map
         item
         xs = { 12 }
@@ -69,30 +68,24 @@ class GoogleMapsContainer extends React.Component {
       >
       {this.state.meetings.map(ele => {
         return ( 
-      
-        <Marker
-        onClick = { this.onMarkerClick }
-        title = {ele.name}
-        position = {{ lat:ele.lat, lng: ele.lng }}
-        data = {"1234yourdatabaseid"} 
-      />
-      
-      
    
-       
-        
-      )})}
-      
-      <InfoWindow
-      marker={this.state.activeMarker}
-      visible={this.state.showingInfoWindow}>
-        <div>
-          <h1>{"dani"}</h1>
-        </div>
-    </InfoWindow> 
-
-      </Map>
-    );
+         <Marker
+      onClick = { this.onMarkerClick }
+      title = {ele.name}
+      position = {{ lat:ele.lat, lng: ele.lng }}
+      data = {"1234yourdatabaseid"} 
+    />
+        )})}
+         <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}>
+              <div>
+                <h1>{this.state.selectedPlace.title}</h1>
+              </div>
+          </InfoWindow>
+          </Map>
+         
+    )
       }else{
         return <p>Loading...</p>
       }

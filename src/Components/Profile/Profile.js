@@ -4,6 +4,7 @@ import AuthService from '../../auth/AuthService';
 import GoogleApiWrapper from "../Map/Map"
 
 
+
 export default class Profile extends Component {
   constructor(props){
     super(props);
@@ -17,17 +18,19 @@ export default class Profile extends Component {
     return (
       
       <div>
-          Mi perfil <br></br>
-        <Link to={`/edit/`}><button>Edita</button></Link>
-       
-        <Link to={'/'}><button onClick={this.authService.logout}>Log Out</button></Link>
-
-        <Link to={'/search'}><button> Search</button> </Link>
-        
-        <div>
+         
+        <div className="Mapa">
           <GoogleApiWrapper></GoogleApiWrapper>
         </div>
       </div>
     )
   }
 }
+
+
+// Mi perfil <br></br>
+// <Link to={`/edit/`}><button>Edita</button></Link>
+
+// <Link to={'/'}><button onClick={this.authService.logout}>Log Out</button></Link>
+
+// <Link to={'/search'}><button> Search</button> </Link>
