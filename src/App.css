@@ -5,11 +5,11 @@
 
 }
 
-.mapFather > div {
+/* .mapFather > div {
 margin-top: 7%;
 height: 70% !important;
 width: 60% !important;
-}
+} */
 
 .Mapa{
   display: flex;
@@ -18,7 +18,23 @@ width: 60% !important;
   
 }
 
+.Mapa > div > div {
+  left: 0;
+}
+
 .login{
   display: flex;
   justify-content: center;
 }
+
+.signup{
+  display: flex;
+  justify-content: center;
+}
+
+.botonContacta{
+  justify-content: center;
+}
+
+
+

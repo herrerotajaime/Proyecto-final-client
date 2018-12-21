@@ -62,7 +62,7 @@ class Signup extends Component {
       return <Redirect to="/" />
     }
     return(
-      <div>
+      <div className="signup">
 <form onSubmit={this.handleFormSubmit}>
 <div className="field">
 <p className="control has-icons-left has-icons-right">

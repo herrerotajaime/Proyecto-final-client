@@ -22,7 +22,11 @@ export default class Profile extends Component {
         <div className="Mapa">
           <GoogleApiWrapper></GoogleApiWrapper>
         </div>
+       <div>
+  
+       </div>
       </div>
+      
     )
   }
 }

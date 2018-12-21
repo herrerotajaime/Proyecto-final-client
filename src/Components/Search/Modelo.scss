@@ -128,8 +128,10 @@ a {
   margin: $margin;
   max-width: 100%;
   column-break-inside: avoid;
+  
   .inner {
     padding: $padding;
+    max-width: 25rem;
   }
 }
 .content-box {
@@ -177,4 +179,45 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.psudoBody {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.card.is-wide {
+  width: 550px;
+}
+
+.card.has-text-centered {
+  .card-header,
+  .card-content,
+  .card-footer {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+}
+
+.card-header {
+  padding: 1.75rem 0;
+}
+
+.card-content {
+  padding: 3.5rem 0;
+}
+
+.card-footer {
+  padding: 1rem 0;
+  border: none;
+  font-size: .9rem;
+  color: lighten(black, 50%);
 }

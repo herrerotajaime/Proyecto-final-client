@@ -7,6 +7,7 @@ import Signup from './Components/Signup/Signup';
 import Profile from './Components/Profile/Profile';
 import AuthService from './auth/AuthService';
 import Search from './Components/Search/Search';
+import Usuario from './Components/Usuario/usuario';
 import 'bulma/css/bulma.css';
 import NavBar from './Components/Navbar/Navbar'
 
@@ -38,6 +39,7 @@ class App extends Component {
           <Route exact path='/signup' render={() => <Signup getUser={this.getTheUser}/>}/>
           <Route exact path='/profile' render={() => <Profile user={this.state.loggedInUser} getUser={this.getTheUser}/>}/>
           <Route exact path='/search' render={() => <Search user={this.state.loggedInUser} getUser={this.getTheUser}/>}/>
+          <Route exact path='/usuario' render={() => <Usuario user={this.state.loggedInUser} getUser={this.getTheUser}/>}/>
 
         </Switch>
      

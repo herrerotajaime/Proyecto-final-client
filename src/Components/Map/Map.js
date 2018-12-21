@@ -48,10 +48,9 @@ class GoogleMapsContainer extends React.Component {
   }
   render() {
     const style = {
-      width: '50vw',
-      height: '50vh',
-      'marginLeft': '1 px',
-      // 'marginRight':
+      width: '100vh',
+      height: '100vh',
+      
     }
    
     console.log(this.state)
@@ -63,8 +62,8 @@ class GoogleMapsContainer extends React.Component {
         style = { style }
         google = { this.props.google }
         onClick = { this.onMapClick }
-        zoom = { 10 }
-        initialCenter = {{ lat: 40.648209, lng: -3.711185 }}
+        zoom = { 13 }
+        initialCenter = {{ lat: 40.411143, lng: -3.699743 }}
       >
       {this.state.meetings.map(ele => {
         return ( 
@@ -73,7 +72,12 @@ class GoogleMapsContainer extends React.Component {
       onClick = { this.onMarkerClick }
       title = {ele.name}
       position = {{ lat:ele.lat, lng: ele.lng }}
-      data = {"1234yourdatabaseid"} 
+      description = {ele.description} 
+      date={ele.date}
+      user1={ele.user1}
+      user2={ele.user2}
+      picurl1={ele.picurl1}
+      picurl2={ele.picurl2}
     />
         )})}
          <InfoWindow
@@ -81,6 +85,11 @@ class GoogleMapsContainer extends React.Component {
             visible={this.state.showingInfoWindow}>
               <div>
                 <h1>{this.state.selectedPlace.title}</h1>
+                <p>{this.state.selectedPlace.description}</p>
+                <p>{this.state.selectedPlace.date}</p>
+                <p>{this.state.selectedPlace.user1}, {this.state.selectedPlace.user2}</p>
+                <p><img src= {this.state.selectedPlace.picurl1 } width="30 px" /> <img src={this.state.selectedPlace.picurl2} width="30 px" /></p>
+                <button>UNETE!</button>
               </div>
           </InfoWindow>
           </Map>

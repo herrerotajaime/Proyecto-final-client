@@ -42,14 +42,19 @@ class Search extends Component {
             <div id="contentBoxApp" ng-app="contentBoxApp">
       <article className="grid-item content-box" ng-repeat="(gridKey, gridItem) in gridItems | filter:filterBySearch">
         <div className="inner">
-        <img className="content-box-thumb"src="https://misanimales.com/wp-content/uploads/2016/08/dos-gatos.jpg" alt="tech image" />
+        <img className="content-box-thumb"src={element.pictureUrl} alt="tech image" />
         <h1 className="content-box-header">
-          {element.name}{" "}{element.surname} 
+          <b>{element.name}{" "}{element.surname} </b>
         </h1>
         <p className="content-box-blurb">
           {element.description}
-        </p>
-        <a className="readmore-link" href="#" ng-click="toggleBlurb($event)">read more</a>
+          </p> <br></br>
+          <p><b>Idioma Nativo: </b>{element.idiom1} <br></br>
+          <b>Segundo Idioma:</b>{element.idiom2}</p>
+         
+        <a className="button is-primary" href=''> 
+          <p>Contacta</p></a>
+          
         </div>
       </article>
 
