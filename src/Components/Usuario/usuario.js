@@ -42,6 +42,8 @@ class Usuario extends Component {
           </div>
           <img src="https://res.cloudinary.com/dfhjbqvwc/image/upload/v1545301985/Banderas/spain.svg" alt="bandera"
               width="30px" height="30px"/>
+           <img src="https://res.cloudinary.com/dfhjbqvwc/image/upload/v1545301983/Banderas/south-korea.svg" alt="bandera"
+              width="30px" height="30px"/>
         </div>
       </div>
     );

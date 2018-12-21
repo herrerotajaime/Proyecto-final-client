@@ -11,16 +11,40 @@ height: 70% !important;
 width: 60% !important;
 } */
 
-.Mapa{
+/* .Mapa{
   display: flex;
   justify-content: center;
   align-content: center;
   
+} */
+.Banderas{
+  display: flex;
+  flex-direction: column;
+
+}
+.row {
+  padding: 0 4px;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+  padding: 0 4px;
+  
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+.divPadre{
+  display: flex;
+  justify-content: space-between
+}
+/* 
 .Mapa > div > div {
   left: 0;
-}
+} */
 
 .login{
   display: flex;

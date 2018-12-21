@@ -89,7 +89,7 @@ class GoogleMapsContainer extends React.Component {
                 <p>{this.state.selectedPlace.date}</p>
                 <p>{this.state.selectedPlace.user1}, {this.state.selectedPlace.user2}</p>
                 <p><img src= {this.state.selectedPlace.picurl1 } width="30 px" /> <img src={this.state.selectedPlace.picurl2} width="30 px" /></p>
-                <button>UNETE!</button>
+                <button className="button is-primary" >UNETE!</button>
               </div>
           </InfoWindow>
           </Map>
